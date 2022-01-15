@@ -25,3 +25,5 @@ for i in range(N):
                     print(stock)
     else:
         print('impossible')
+
+#投入される金額もリストに入れて、繰り返す方がいいかも
