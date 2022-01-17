@@ -102,5 +102,5 @@ for i in range(N):
     else:
         print('impossible')
             
-   
+
                     
