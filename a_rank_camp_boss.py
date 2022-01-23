@@ -61,7 +61,7 @@ else:
     result = "B"
 print(result)
 
-#practice_1
+#practice_1 submit(failed)
 H,W = map(int,input().split())
 
 S = [list(input())for i in range(H)]
@@ -86,4 +86,90 @@ for y in range(H):
             S[0][W-1] = '*'
         #bottom
         if y == H and x != 0 and x != W and S[y][x] == '*':
-            S[]
+            S[y-1][x] = '*'
+            S[y][x-1] = '*'
+            S[y][x+1] = '*'
+            #base_case
+        if S[y][x] == '*' and y != 0 and y != H and x != 0 and x != W:
+            S[y][x-1] = '*'
+            S[y+1][x] = '*'
+            S[y][x+1] = '*'
+
+#answer
+H,W = map(int,input().split())
+
+S = [list(input())for i in range(H)]
+flag = False
+
+for y in range(H):
+    for x in range(W):
+        if S[y][x] == '*':
+            if y > 0:
+                S[y-1][x] = '*'
+            if y < H-1:
+                S[y+1][x] = '*'
+            if x > 0:
+                S[y][x-1] = '*'
+            if x < W-1:
+                S[y][x+1] = '*'
+            flag = True
+            break
+    if flag:
+        break
+
+for y in range(H):
+    print(''.join(S[y]))
+
+#practice_2 submit
+H,W = map(int,input().split())
+S = [list(input())for i in range(H)]
+flag = False
+
+for y in range(H):
+    for x in range(W):
+        if S[y][x] == '*':
+            if y > 0:
+                if S[y-1][x] != '#':
+                    S[y-1][x] = '*'
+            if y < H-1:
+                if S[y+1][x] != '#':
+                    S[y+1][x] = '*'
+            if x > 0:
+                if S[y][x-1] != '#':
+                    S[y][x-1] = '*'
+            if x < W-1:
+                if S[y][x+1] != '#':
+                    S[y][x+1] = '*'
+            flag = True
+            break
+    if flag:
+        break
+
+for y in range(H):
+    print(''.join(S[y]))
+            
+#answer
+H, W = map(int, input().split())
+s = [list(input()) for _ in range(H)]
+
+flag_out = False
+for y in range(H):
+    for x in range(W):
+        if s[y][x] == "*":
+            if y > 0 and s[y - 1][x] == ".":
+                s[y - 1][x] = "*"
+            if y < H - 1 and s[y + 1][x] == ".":
+                s[y + 1][x] = "*"
+            if x > 0 and s[y][x - 1] == ".":
+                s[y][x - 1] = "*"
+            if x < W - 1 and s[y][x + 1] == ".":
+                s[y][x + 1] = "*"
+            flag_out = True
+            break
+    if flag_out:
+        break
+
+for y in range(int(H)):
+    for x in range(int(W)):
+        print(s[y][x], end="")
+    print()
