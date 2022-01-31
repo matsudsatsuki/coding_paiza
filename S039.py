@@ -22,22 +22,25 @@ for y in range(H):
                 for step in range(1,matrix+1):
                         if '#' not in S[y+1][x+1-step] and '#' not in S[y+1-step][x+1]:
                             flag = True
-                elif flag = False and '#' not in S[y+1][x+1-step]:
-                    while True:
-                        if '#' not in S[y+1][x+1-step]:
-                            ans += matrix 
-                            y += 1
-                        else:
-                            break
-                    ans_list.append(ans)
-                elif flag = False and '#' not in S[y+1-step][x+1]:
-                    while True:
-                        if '#' not in S[y+1-step][x+1]:
-                            ans += matrix 
-                            x += 1
-                        else:
-                            break
-                    ans_list.append(ans)
+                        elif flag == False and '#' not in S[y+1][x+1-step]:
+
+                            while True:
+                                if '#' not in S[y+1][x+1-step]:
+
+                                    ans += matrix 
+                                    y += 1
+                                else:
+                                    break
+                            ans_list.append(ans)
+                        elif flag == False and '#' not in S[y+1-step][x+1]:
+                            while True:
+                                if '#' not in S[y+1-step][x+1]:
+
+                                    ans += matrix 
+                                    x += 1
+                                else:
+                                    break
+                            ans_list.append(ans)
                             
                 if flag:
                     matrix += 1
