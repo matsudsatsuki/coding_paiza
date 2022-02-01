@@ -76,11 +76,11 @@ for x in perm_list:
             print(a)
             count += 1
     
-print(all_list[0])        #print('a')
-            
-        #row = num
-        #while row < m:
-            #a = trasform(n,a,trans_list,row)
-            #row += 1
-            #print(a)
-            
+b = []
+ans = sorted(all_list,key=lambda x : x[1])#checkを入れるといいかも
+#for i in range(1,n+1):
+for i in range(1,n+1):
+    #print(ans[0][i])
+    b.append(ans[0][i])
+print(*b)
+     
