@@ -61,7 +61,6 @@ for i in range(n):
     cost -= a
     
 print(cost)
-
 #answer
 import heapq
 
