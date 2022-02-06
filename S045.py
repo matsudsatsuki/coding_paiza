@@ -50,14 +50,14 @@ while q:
     if len(new_list) == 1:
         #print('d')
         continue
-    if len(new_list) == 2:
+    if len(new_list) > 1:#全部を走査しないとだめだった
         if new_list[0] > new_list[1]:
             #print('e')
             count += 1
-            break
+            
         else:
             #print('f')
-            break
+            continue
             
     
     #print(new_list)
