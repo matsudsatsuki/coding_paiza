@@ -46,7 +46,7 @@ H,W = map(int,input().split())
 T = [[int(x)for x in input().split()]for _ in range(H)]
 n = int(input())
 cost_list = []
-st = dijkstra(H,W,T,0,0,W-1,H-1)
+st = dijkstra(H,        W,T,0,0,W-1,H-1)
 cost = st.cost
 print(cost)
 while st is not None:
